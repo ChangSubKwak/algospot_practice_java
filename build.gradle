@@ -1,0 +1,28 @@
+plugins {
+    // id 'application'   // 콘솔 앱이면 유지, 라이브러리면 제거
+    id 'java'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(23) // 21로 변경 가능
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(platform('org.junit:junit-bom:5.10.3'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+}
+
+test {
+    useJUnitPlatform()
+}
+
+//application {
+//    // 콘솔 앱인 경우 엔트리 지정
+//    mainClass = 'com.algospot.Main'
+//}
